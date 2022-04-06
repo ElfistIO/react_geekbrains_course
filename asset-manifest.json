@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react_geekbrains_course/static/css/main.0b8a31f4.css",
+    "main.js": "/react_geekbrains_course/static/js/main.66c75804.js",
+    "index.html": "/react_geekbrains_course/index.html",
+    "main.0b8a31f4.css.map": "/react_geekbrains_course/static/css/main.0b8a31f4.css.map",
+    "main.66c75804.js.map": "/react_geekbrains_course/static/js/main.66c75804.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b8a31f4.css",
+    "static/js/main.66c75804.js"
+  ]
+}
