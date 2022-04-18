@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import "@testing-library/user-event";
 import { Chat } from "./Chat";
@@ -16,8 +16,8 @@ describe("Chat", () => {
 
   it("User feedback", () => {
     render(<Chat />);
-    expect(screen.getByText({ author })).toBeInTheDocument();
-    expect(screen.getByText({ message })).toBetoBeInTheDocument();
+    expect(screen.getByText("")).toBeInTheDocument();
+    expect(screen.getByText("")).toBetoBeInTheDocument();
   });
 
   it("Bot answer", async () => {
