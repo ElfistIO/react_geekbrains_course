@@ -1,7 +1,9 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    node: true,
+    jest: true,
   },
   extends: ["prettier", "eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended", "prettier", "plugin:react-hooks/recommended", "plugin:storybook/recommended"],
   parserOptions: {
