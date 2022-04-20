@@ -7,24 +7,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .wrapper {
-  padding-top: 5rem;
+  padding-top: 2rem;
   margin: 0 auto;
   width: 600px;
 }
-
-.rm {
-  background: darkred;
-  border-radius: 50%;
-  color: #fff;
-  border: none;
+.container {
+  background-color:bisque;
+  padding: 20px 20px;
+  border-radius: 5px;
 }
-
-.completed {
-  text-decoration: line-through;
+.chat {
+  display: flex;
+  flex-direction: column;
+  background-color: ivory;
+  border-radius: 5px;
+  list-style: none;
+  padding: 20px 20px;
+  height: 200px;
+}
+.message {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  background-color:lightblue;
+  padding: 15px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.bot-message {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  width: 200px;
+  background-color:cornflowerblue;
+  padding: 15px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
 }
