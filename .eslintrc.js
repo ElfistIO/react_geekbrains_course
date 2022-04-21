@@ -1,38 +1,48 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
     node: true,
+    es6: true,
     jest: true,
   },
-  extends: ["prettier", "eslint:recommended", "plugin:prettier/recommended", "plugin:react/recommended", "prettier", "plugin:react-hooks/recommended", "plugin:storybook/recommended"],
+  extends: [
+    "prettier",
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+  ],
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
+    ecmaVersion: "latest",
     sourceType: "module",
-    ecmaVersion: 'latest'
   },
-  plugins: ["react-hooks", "jest", 'react', 'prettier'],
-  settings: {
-    "react": {
-      "version": "detect"
-    }
-  },
+  plugins: ["react", "prettier", "react-hooks", "jest"],
   rules: {
-    "prettier/prettier": ["error", {
-      "endOfLine": "auto"
-    }],
+    "react/display-name": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        singleQuote: true,
+      },
+    ],
     "react/prop-types": 0,
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
-    "react/display-name": 0,
-    semi: ['warn', 'always']
+    "linebreak-style": ["error", "unix"],
+    quotes: ["warn", "single"],
+    semi: ["warn", "always"],
   },
-  overrides: [{
-    files: ["webpack.config.js"],
-    rules: {
-      "@typescript-eslint/no-var-requires": ["off"]
-    }
-  }]
+  overrides: [
+    {
+      files: ["webpack.config.js"],
+      rules: {
+        "@typescript-eslint/no-var-requires": ["off"],
+      },
+    },
+  ],
 };
