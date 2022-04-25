@@ -1,25 +1,33 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Chat } from "./Chat";
-import { NameInput } from "./NameInput";
-import { Feedback } from "./Feedback";
-import { Submit } from "./Submit";
+import React, { FC, useState, useEffect, useCallback } from "react";
+import { Chat } from "../Chat/Chat";
+import { NameInput } from "../NameInput/NameInput";
+import { Feedback } from "../Feedback/Feedback";
+import { Submit } from "../Submit/Submit";
 
-export const Container = () => {
-  const [messages, setMessages] = useState([]);
+interface Messages {
+  botMessage: any;
+  message: any;
+  author: string;
+}
+
+export const Container: FC = () => {
+  const [messages, setMessages] = useState<Messages[]>([]);
   const [message, setMessage] = useState("");
   const [author, setAuthor] = useState("");
   const [botMessage] = useState("Your feedback accepted.");
   const [botAuthor] = useState("Bot");
-  const chatEl = useRef(null);
-  const changeАuthor = (event) => {
+
+  const changeАuthor = (event: any) => {
     setAuthor(event.target.value);
   };
-  const changeMessage = (event) => {
+
+  const changeMessage = (event: any) => {
     setMessage(event.target.value);
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
     setMessages([...messages, { message, author, botMessage: false }]);
+    setMessage("");
   };
   useEffect(() => {
     if (messages.length && !messages[messages.length - 1].botMessage) {
@@ -32,13 +40,15 @@ export const Container = () => {
             botMessage: true,
           },
         ]);
-      }, 1500);
+      }, 1000);
+      clearTimeout();
     }
   }, [messages.length]);
+
   return (
     <div className="container">
-      <Chat messages={messages} refEl={chatEl} />
-      <form className="form" action="submit" onSubmit={handleSubmit}>
+      <Chat messages={messages} />
+      <form className="form" onSubmit={handleSubmit}>
         <NameInput author={author} onChange={changeАuthor} />
         <Feedback message={message} onChange={changeMessage} />
         <Submit disabled={message && author ? false : true} />

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(183, 211, 238);
 }
 
 .wrapper {
@@ -13,18 +14,18 @@ body {
   width: 600px;
 }
 .container {
-  background-color:bisque;
+  background-color:rgba(120, 160, 197, 0.801);
   padding: 20px 20px;
   border-radius: 5px;
 }
 .chat {
   display: flex;
   flex-direction: column;
-  background-color: ivory;
+  background-color: rgb(212, 231, 243);
   border-radius: 5px;
   list-style: none;
   padding: 20px 20px;
-  height: 200px;
+  min-height: 220px;
 }
 .message {
   display: flex;
@@ -48,6 +49,6 @@ body {
 .form {
   display: flex;
   flex-direction: column;
-  height: 200px;
+  height: 300px;
   justify-content: space-between;
 }

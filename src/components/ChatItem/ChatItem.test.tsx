@@ -16,6 +16,5 @@ describe("ChatItem", () => {
   it("Render component author/bot", () => {
     render(<ChatItem author={""} message={""} />);
     expect(screen.getByText("")).toBeInTheDocument();
-    expect(screen.getByText("")).toBetoBeInTheDocument();
   });
 });
