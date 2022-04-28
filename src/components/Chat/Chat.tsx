@@ -6,8 +6,8 @@ interface ChatProps {
 }
 
 interface Messages {
-  botMessage: any;
-  message: any;
+  botMessage: string;
+  message: string;
   author: string;
 }
 
